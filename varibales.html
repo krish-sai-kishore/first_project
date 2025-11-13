@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basics JS</title>
+  </head>
+  <body>
+    <p>
+      JavaScript is dynamically typed, meaning: You don’t need to declare the
+      type of variable. The type can change at runtime.
+    </p>
+    <h1>Variables</h1>
+    <p>
+      variable is a container used to store data that can be used and changed
+      throughout a program. It acts as a named memory location that holds a
+      value such as a number, string, object, or boolean.
+    </p>
+    <h3>Declaring Variables</h3>
+    <ol>
+      <li>var - Function scoped</li>
+      <li>let - Block scoped</li>
+      <li>const- Block scoped</li>
+    </ol>
+    <p>Variables can store different data types.</p>
+    <p>Variable Scope</p>
+    <ul>
+      <li>Global scope: Accessible everywhere.</li>
+      <li>Function scope: Accessible only inside a function (var).</li>
+      <li>Block scope: Accessible only within {} block (let, const).</li>
+    </ul>
+    <script>
+      // Declaring Variables using let
+      let name = "sai";
+      console.log(name);
+      // Declaring Variables using const
+      let name_2 = "ravi";
+      console.log(name_2);
+      //   Block scope: Accessible only within {} block (let, const).
+      {
+        let name_3 = "reddy";
+        console.log(name_3);
+        const DOB = 15;
+        console.log(DOB);
+      }
+      //   console.log(name_3,DOB);   ReferenceError: name_3 is not defined(Accessible only within {} block (let, const).)
+
+      //   Global scope: Accessible everywhere. - using let
+      let details = "sai";
+      {
+        console.log(details); // sai
+      }
+      console.log(details); //sai
+      //   Global scope: Accessible everywhere. - using const
+      const details_2 = "ravi";
+      {
+        console.log(details_2); // ravi
+      }
+      console.log(details_2); // ravi
+      //  Global scope: Accessible everywhere. - using var
+      var details_3 = "hari";
+      {
+        console.log(details_3); // hari
+      }
+      console.log(details_3); // hari
+
+      //   Function scope: Accessible only inside a function (var).
+      function add() {
+        var a = 30;
+        var b = 20;
+        console.log(a + b);
+      }
+      add();
+      //   console.log(a + b); ReferenceError: a is not defined
+
+      //   Function scope: Accessible only inside a function (let).
+      function add() {
+        let a = 30;
+        let b = 20;
+        console.log(a + b);
+      }
+      add();
+      //   console.log(a + b);  ReferenceError: a is not defined
+
+      //   Function scope: Accessible only inside a function (const).
+      function add() {
+        const a = 30;
+        const b = 20;
+        console.log(a + b);
+      }
+      add();
+      //   console.log(a + b); ReferenceError: a is not defined
+    </script>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops</title>
+  </head>
+  <body>
+    <h1>Loops</h1>
+    <p>
+      Loops in JavaScript are used to execute a block of code repeatedly until a
+      specified condition is false. They make your program more efficient by
+      avoiding repetition.
+    </p>
+    <h3>1. for Loop</h3>
+    <p>Used when you know how many times you want to run a block of code.</p>
+    <p>
+      for (initialization; condition; increment/decrement) <br />
+      { <br />// code to be executed<br />
+      }
+    </p>
+    <button onclick="for_loop()">for loop</button>
+    <h3>2. while Loop</h3>
+    <p>
+      Used when you don’t know the number of iterations in advance. It keeps
+      running as long as the condition is true.
+    </p>
+    <p>
+      while (condition) { <br />
+      // code block <br />
+      }
+    </p>
+    <button onclick="while_loop()">while loop</button>
+    <h3>3.do...while Loop</h3>
+    <p>
+      Executes the code at least once, even if the condition is false, then
+      continues looping while the condition remains true.
+    </p>
+    <p>
+      do { <br />
+      // code block<br />
+      } while (condition);
+    </p>
+    <button onclick="do_while_loop()">do while loop</button>
+    <h3>4. for...in Loop</h3>
+    <p>Used to loop through the properties of an object.</p>
+    <p>
+      for (let key in object) { <br />
+      // code block<br />
+      }
+    </p>
+    <button onclick="for_in_loop()">for...in Loop</button>
+    <h3>5.for...of Loop</h3>
+    <p>Used to iterate over arrays, strings, or any iterable object.</p>
+    <p>
+      for (let value of iterable) { <br />
+      // code block<br />
+      }
+    </p>
+    <button onclick="for_of_loop()">for...of loop</button>
+    <h3>Note</h3>
+    <ul>
+      <li><p>for in return numbers</p></li>
+      <li><p>for of return values in a arrays,string,etc</p></li>
+    </ul>
+
+    <script>
+      // for loop
+      function for_loop() {
+        console.log("for loop");
+        for (i = 0; i <= 5; i++) {
+          console.log("value:", i);
+        }
+      }
+      //   while loop
+      function while_loop() {
+        console.log("while loop");
+        let value = 1;
+        while (value <= 5) {
+          console.log("value:", value);
+          value++;
+        }
+      }
+      // do_while loop
+      function do_while_loop() {
+        console.log("do while loop");
+        let i = 1;
+        do {
+          console.log("value:", i);
+          i++;
+        } while (i <= 5);
+      }
+      //   for...in Loop
+      details = {
+        name: "kishore",
+        age: 22,
+        roll_no: 3221,
+      };
+      function for_in_loop() {
+        for (let detail in details) {
+          console.log(`My name is ${details.name} and I'm ${details.age}.`);
+        }
+      }
+      // for...of Loop
+      let Name = "kishore";
+      function for_of_loop() {
+        for (let char of Name) {
+          console.log(char);
+        }
+      }
+    </script>
+  </body>
+</html>

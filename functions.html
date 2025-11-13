@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Functions</h1>
+    <p>
+      A function in JavaScript is a block of reusable code designed to perform a
+      specific task. Instead of writing the same code repeatedly, you can define
+      a function once and call it whenever needed.
+    </p>
+    <h4>Syntax:</h4>
+    <p>
+      function functionName(parameters) { <br />
+      // code to execute<br />
+      return value; // optional<br />
+      }
+    </p>
+    <hr />
+    <h3>Function Declaration</h3>
+    <p>This is the traditional way to define a function.</p>
+    <button onclick="declaration()">Declaration</button>
+    <p>Hoisted: You can call it before or after its declaration.</p>
+    <hr />
+    <h3>Function Expression</h3>
+    <p>You can also assign a function to a variable.</p>
+    <button onclick="expression()">expression</button>
+    <p>Not hoisted — you must define it before using it.</p>
+    <hr />
+    <h3>Arrow Function (ES6)</h3>
+    <p>A shorter syntax introduced in modern JavaScript.</p>
+    <button onclick="arrow()">Arrow Function</button>
+    <hr />
+    <h3>Function Parameters and Arguments</h3>
+    <p>
+      Parameters: Variables listed in the function definition. <br />
+      Arguments: Actual values passed to the function.
+    </p>
+    <button onclick="parameters_args()">paras and args</button>
+    <hr />
+    <h3>Return Statement</h3>
+    <p>Functions can return values to the code that called them.</p>
+    <button onclick="console.log(returned())">return</button>
+    <hr />
+    <h3>Default Parameters</h3>
+    <p>You can set default values for parameters.</p>
+    <button
+      onclick=" greet(); // Hello, Guest
+      greet('Kishore'); // Hello, Kishore;
+    "
+    >
+      Default
+    </button>
+    <hr />
+    <h3>Nested Functions</h3>
+    <p>Functions can be defined inside other functions.</p>
+    <hr />
+    <h3>Anonymous Functions</h3>
+    <p>Functions without a name — often used as callbacks.</p>
+    <button onclick="Anonymous()">Anonymous</button>
+    <hr />
+    <h3>Spread Operator (...)</h3>
+    <p>
+      Used to expand (or “spread out”) elements of an array or object. It helps
+      in copying, combining, and passing elements easily.
+    </p>
+    <button onclick="Spread()">spread</button>
+    <hr />
+    <h3>Rest Operator (...)</h3>
+    <p>
+      Used to collect multiple arguments into a single array or object. It works
+      in the function parameter list or object/array destructuring.
+    </p>
+    <button onclick="rest()">rest</button>
+    <hr />
+    <h3>Note:</h3>
+    <p>
+      ...spread → expands elements (used in arrays/objects/functions). <br />
+      ...rest → gathers elements (used in parameters/destructuring).
+    </p>
+    <script>
+      function declaration() {
+        function add(a, b) {
+          return a + b;
+        }
+
+        console.log(add(5, 3)); // 8
+      }
+      function expression() {
+        const multiply = function (a, b) {
+          return a * b;
+        };
+        console.log(multiply(4, 2)); // 8
+      }
+      function arrow() {
+        let multiple = (a, b) => a * b;
+        console.log(multiple(3, 4));
+      }
+      function parameters_args() {
+        let multiple = (a, b) => a * b; // a,b are parameters  and 3,4 are arguments
+        console.log(multiple(3, 4));
+      }
+      function returned() {
+        return "krish";
+      }
+      function greet(name = "Guest") {
+        console.log("Hello, " + name);
+      }
+      function Anonymous() {
+        setTimeout(function () {
+          console.log("This runs after 2 seconds");
+        }, 2000);
+      }
+      function Spread() {
+        console.log("Spreading in Arrays");
+        const numbers = [1, 2, 3];
+        const newNumbers = [...numbers, 4, 5];
+        console.log(newNumbers);
+        console.log("Copying Arrays");
+        const original = [10, 20, 30];
+        const copy = [...original];
+        console.log(copy); // [10, 20, 30]
+        console.log("Combining Multiple Arrays");
+        const arr1 = [1, 2];
+        const arr2 = [3, 4];
+        const combined = [...arr1, ...arr2];
+        console.log(combined);
+        console.log("Spreading in Objects");
+        const person = { name: "Kishore", age: 20 };
+        const details = { ...person, city: "Hyderabad" };
+        console.log(details);
+        console.log("Spread in Function Calls");
+        function sum(a, b, c) {
+          return a + b + c;
+        }
+        let number = [1, 2, 3];
+        console.log(sum(...number)); // 6
+      }
+      function rest() {
+        console.log("Function Parameters");
+        function showNumbers(...num) {
+          console.log(num);
+        }
+        showNumbers(1, 2, 3, 4);
+        console.log("Mixing Normal and Rest Parameters");
+        function sum(a, b, ...others) {
+          console.log("a:", a);
+          console.log("b:", b);
+          console.log("others:", others);
+        }
+        sum(10, 20, 30, 40, 50);
+        console.log(" Rest in Object Destructuring");
+        const person = { name: "Kishore", age: 20, city: "Hyderabad" };
+        const { name, ...rest } = person;
+        console.log(name); // Kishore
+        console.log(rest); // { age: 20, city: "Hyderabad" }
+      }
+    </script>
+  </body>
+</html>

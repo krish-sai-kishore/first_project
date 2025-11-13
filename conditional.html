@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>conditionals</h1>
+    <p>
+      Conditionals in JavaScript are statements that help your program make
+      decisions based on certain conditions. They check whether an expression is
+      true or false and execute different blocks of code accordingly.
+    </p>
+    <h3>1. if Statement</h3>
+    <p>Used to execute a block of code only if a condition is true.</p>
+    <h3>2. if...else Statement</h3>
+    <p>Runs one block if the condition is true, another if it’s false.</p>
+    <h3>3. if...else if...else Statement</h3>
+    <p>Used when you have multiple conditions to check.</p>
+    <h3>4. switch Statement</h3>
+    <p>
+      Used as an alternative to multiple if...else if statements. It compares a
+      single expression against multiple possible values.
+    </p>
+    <h3>5. Ternary Operator (?:)</h3>
+    <p>
+      A shorthand way to write an if...else statement. It returns a value based
+      on a condition.
+    </p>
+    <script>
+      // if condition
+      let condition_1 = 1;
+      if (condition_1 == true) {
+        console.log("Yes,Condition is true");
+      }
+      //   if...else
+      let condition_2 = 0;
+      if (condition_2 == true) {
+        console.log("Yes,Condition is true");
+      } else {
+        console.log("No,Condition is false");
+      }
+      //   if...else if...else
+      if (condition_1 == true && condition_2 == true) {
+        console.log("Yes,Condition is one true and one false");
+      } else if (condition_1 == true || condition_2 == true) {
+        console.log("Yes,one value is true");
+      } else {
+        console.log("No,Condition is false");
+      }
+      //   switch
+      const day = "thus";
+      switch (day) {
+        case "mon":
+          console.log("Monday");
+          break;
+        case "tues":
+          console.log("Tuesday");
+          break;
+        case "wed":
+          console.log("Wednesday");
+          break;
+        case "thus":
+          console.log("Thursday");
+          break;
+        case "fri":
+          console.log("Friday");
+          break;
+        default:
+          console.log("saturday");
+      }
+      //  Ternary Operator (?:)
+      value = 6;
+      value > 5
+        ? console.log("value is greater then 5")
+        : console.log("value is less then 5");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data types</title>
+  </head>
+  <body>
+    <h1>Data Types</h1>
+    <h3>Primitive Data Types</h3>
+    <p>
+      Primitive types store single values and are immutable (cannot be changed
+      directly).
+    </p>
+    <ul>
+      <li>String - Represents text enclosed in quotes</li>
+      <li>Number - Represents numeric values (integers or decimals)</li>
+      <li>BigInt - Represents large integers beyond Number limit</li>
+      <li>Boolean - Represents logical values</li>
+      <li>Undefined - A variable declared but not assigned</li>
+      <li>Null - Represents an empty or unknown value</li>
+      <li>Symbol - Used to create unique identifiers</li>
+    </ul>
+    <h3>Non-Primitive (Reference) Data Types</h3>
+    <p>These types store collections or complex structures and are mutable.</p>
+    <ul>
+      <li>Object : Key-value pairs</li>
+      <li>Array : Ordered list of values</li>
+      <li>Function : Block of reusable code</li>
+      <li>Date : Represents dates and times</li>
+    </ul>
+    <h3>Checking Data Types</h3>
+    <p>Use the typeof operator</p>
+    <p>
+      note :- <br />
+      null is considered an object (a known JavaScript bug). <br />
+      Arrays and functions are technically objects. <br />
+      BigInt and Symbol were added in modern JavaScript (ES6+).
+    </p>
+    <script>
+      let name = "kishore";
+      console.log(typeof name); //string
+      let age = 32;
+      console.log(typeof age); // Number
+      let weight = 134.3;
+      console.log(typeof weight); // Number
+      let likes = 1234567890n;
+      console.log(typeof likes); // BigInt
+      let value;
+      console.log(value); // undefined
+      let Value = null;
+      console.log(typeof Value); //Object
+      let id = Symbol("customer");
+      console.log(typeof id); // symbol
+      let details = { name: "kishore", age: 32, roll_no: 2323 };
+      console.log(typeof details);
+      let roll_numbers = [123, 124, 125];
+      console.log(typeof roll_numbers);
+      let full_name = function () {
+        console.log("Kishore sai Kasina");
+      };
+      console.log(typeof full_name);
+      let date = new Date();
+      console.log(typeof date);
+    </script>
+  </body>
+</html>
